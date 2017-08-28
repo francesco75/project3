@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<table class="table table-striped">
+        <thead>
+            <tr>
+            <th></th>
+                <th></th>
+             <th></th>
+              <th></th>
+              <th><a target="_blank"
+    class="btn btn-info pull-right"
+    href="{% url 'create_ticket' %}">
+    Add Ticket
+</a> </th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Content</th>
+                <th>Date</th>
+                <th>Resolved</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for Ticket in form %}
+                <tr>
+                    <td>{{ Ticket.name }}</td>
+                    <td>{{ Ticket.type }}</td>
+                    <td>{{ Ticket.content }}</td>
+                    <td>{{ Ticket.date }}</td>
+                    <td>{{ Ticket.resolved }}</td>
+                    <td><a target="_blank"
+    class="btn btn-info pull-right"
+    href="{% url 'ticket_detail' Ticket.id %}">
+    Read More
+</a></td>
+
+                </tr>
+          {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

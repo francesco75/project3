@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="row">
+    <div class=" col-md-4">
+     <img src="{% static "bug.jpg" %}"/>
+    </div>
+    <div class=" col-md-4">
+        <h1 align="center" >Unicorn Attractor</h1>
+        <h2 align="center">Support Django Syntax</h2>
+        <h3 align="center">Codec Django</h3>
+        <p> Application helps the WeB Developer to develop the Web Site and shows the bugs or buy some features </p>
+                 {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Log Out</a>
+                 {% else %}
+                       <a href="{% url 'register' %}">Register</a>
+                       <a href="{% url 'login' %}">Log In</a>
+                 {% endif %}
+
+    </div>
+    <div class=" col-md-4">
+        <img src="{% static "images/error.jpg" %}"/>
+    </div>
+</div>
+{% endblock %}

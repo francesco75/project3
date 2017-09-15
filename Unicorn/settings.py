@@ -45,8 +45,14 @@ INSTALLED_APPS = (
     'django_forms_bootstrap',
     'disqus',
     'ticket',
+    'vote',
+    'debug_toolbar',
+    'tinymce',
+    'emoticons',
 )
 
+
+SITE_ID = 1
 
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
@@ -64,6 +70,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 )
 
 ROOT_URLCONF = 'Unicorn.urls'

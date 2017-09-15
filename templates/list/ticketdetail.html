@@ -1,6 +1,10 @@
 {% extends "base.html" %}
-
 {% block content %}
+{% load bootstrap_tags %}
+{% load staticfiles %}
+
+
+
     <div class="row">
         <div class="col-md-2 col-sm-3 text-center">
 
@@ -16,6 +20,10 @@
                     <p><button class="btn btn-default" onclick="location.href={% url 'delete' post.id %}">Delete</button></p>
                     {{ post.date }}
 
+
+<br>
+
+
                     <a target="_blank"
     class="btn btn-info pull-right"
     href="{% url 'tickets_list'  %}">
@@ -25,5 +33,6 @@
                 </div>
             </div>
         </div>
+
     </div>
 {% endblock %}

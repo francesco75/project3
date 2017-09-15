@@ -1,5 +1,6 @@
-from django import forms
 
+from django import forms
+from .models import Ticket
 from ticket import models
 
 
@@ -9,3 +10,7 @@ class CreateTicketForm(forms.ModelForm):
     class Meta:
         model = models.Ticket
         fields = "__all__"
+
+
+
+

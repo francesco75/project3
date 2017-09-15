@@ -4,9 +4,17 @@
 <table class="table table-striped">
         <thead>
             <tr>
-            <th></th>
-                <th></th>
-             <th></th>
+            <th> <a target="_blank"
+    class="btn btn-info pull-right"
+    href="{% url 'create_vote'  %}">
+    Create Vote
+</a></th>
+                <th><a target="_blank"
+    class="btn btn-info pull-right"
+    href="{% url 'vote_list'  %}">
+     List Vote</th>
+             <th>
+</a></th>
               <th></th>
               <th><a target="_blank"
     class="btn btn-info pull-right"
@@ -31,13 +39,12 @@
                     <td>{{ Ticket.date }}</td>
                     <td>{{ Ticket.resolved }}</td>
                     <td><a target="_blank"
-    class="btn btn-info pull-right"
-    href="{% url 'ticket_detail' Ticket.id %}">
-    Read More
-</a></td>
+                 class="btn btn-info pull-right"
+                   href="{% url 'ticket_detail' Ticket.id %}">Read More</a></td>
 
                 </tr>
           {% endfor %}
+
 
         </tbody>
     </table>

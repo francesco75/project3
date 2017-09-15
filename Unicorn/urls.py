@@ -12,13 +12,15 @@ Class-based views
 Including another URLconf
     1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
+from django.conf.urls import  include, url
 from django.contrib import admin
+
 from accounts import views as accounts_views
 from accounts.views import register,profile, login, logout
-#from ticket import views
+from ticket import views
 from home import views
 from ticket import views as ticket_views
+
 
 
 urlpatterns = [
@@ -35,7 +37,11 @@ urlpatterns = [
     url(r'^ticket/list/$', ticket_views.tickets_list, name='tickets_list'),
     url(r'^(?P<id>\d+)/$',ticket_views.ticket_detail, name='ticket_detail'),
     url(r'^(?P<id>\d+)edit/$', ticket_views.edit_ticket, name='edit'),
-    url(r'^(?P<id>\d+)delete/$', ticket_views.delete_ticket, name='delete')
+    url(r'^(?P<id>\d+)delete/$', ticket_views.delete_ticket, name='delete'),
+
+    ################# Vote ###############
+    url(r'^create_vote/$', ticket_views.create_vote, name='create_vote'),
+    url(r'^vote/list/$', ticket_views.vote_list, name='vote_list'),
 
 
 ]

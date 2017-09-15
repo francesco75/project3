@@ -1,8 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from ticket.forms import CreateTicketForm
+from vote.forms import CreateVoteForm
 from django.utils import timezone
 from .models import Ticket
-from django.shortcuts import redirect
+from django.shortcuts import redirect, reverse
+from vote.models import Vote
+
+
+
 
 
 """
@@ -23,7 +28,7 @@ def edit_ticket(request, id):
             return render(request, ticket_detail, post.pk)
     else:
         form = CreateTicketForm(instance=post)
-    return render(request, 'add_forms.html', {'form': form})
+    return render(request, 'list/add_forms.html', {'form': form})
 
 
 def tickets_list(request):
@@ -44,13 +49,12 @@ def create_ticket(request):
         form = CreateTicketForm(request.POST)
         if form.is_valid():
             list = form.save(commit=False)
-            list.date  = timezone.now()
             list.save()
         return redirect(ticket_detail , list.pk )
 
     else:
-        form = CreateTicketForm()
-    return render(request, 'add_forms.html', {
+        form = CreateTicketForm
+    return render(request, 'list/add_forms.html', {
         'form': form
     })
 
@@ -58,8 +62,45 @@ def delete_ticket(request, id):
     ''''Delete the ticket to the system'''
     post = get_object_or_404(Ticket, pk=id)
     post.delete()
-    return render(request,"delete_ticket.html")
-    #return redirect(ticket_detail,post.id)
+    return render(request,"list/delete_ticket.html")
+
+
+
+
+##################  Vote ################
+
+
+def vote_list(request):
+    '''Show a listed tickets'''
+    form = Vote.objects.all()
+    return render(request, 'votex/votelist.html', {'form': form})
+
+
+def create_vote(request):
+    ''' Add a new ticket to the system. '''
+    if request.method == "POST":
+        form = CreateVoteForm(request.POST)
+        if form.is_valid():
+            list = form.save(commit=False)
+            list.save()
+        return render(request, 'votex/votedetail.html' )
+
+
+    else:
+        form = CreateVoteForm
+    return render(request, 'votex/voteme.html', {
+        'form': form
+    })
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,7 +7,7 @@ from django.conf import settings
 
 TYPE_CHOICES = (
   ('bug', 'bug'),
-  ('feature', 'feature'),
+  ('Payment', 'Payment'),
 )
 
 
@@ -17,7 +17,7 @@ def _(param):
 
 class Ticket(models.Model):
     '''
-    Either a bug or feature ticket
+    Either a bug or Payment ticket
     '''
     name = models.CharField(max_length=254)
     type = models.CharField(max_length=254,choices=TYPE_CHOICES, default=TYPE_CHOICES)

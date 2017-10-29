@@ -12,5 +12,3 @@ class CreateTicketForm(forms.ModelForm):
         fields = "__all__"
 
 
-
-

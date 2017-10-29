@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=254)),
-                ('type', models.CharField(choices=[(b'bug', b'bug'), (b'feature', b'feature')], default=((b'bug', b'bug'), (b'feature', b'feature')), max_length=254)),
+                ('type', models.CharField(choices=[(b'bug', b'bug'), (b'Payment', b'Payment')], default=((b'bug', b'bug'), (b'Payment', b'Payment')), max_length=254)),
                 ('content', models.TextField()),
                 ('date', models.DateField()),
                 ('resolved', models.BooleanField(default=False)),

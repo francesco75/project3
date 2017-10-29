@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 
 class UserRegistrationForm(UserCreationForm):
     name = forms.CharField(max_length=254)
-    CHOICES = (('bug', 'bug',), ('feature', 'feature',))
+    CHOICES = (('bug', 'bug',), ('Payment', 'Payment',))
     ticket = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
 
     password1 = forms.CharField(

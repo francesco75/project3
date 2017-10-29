@@ -4,19 +4,13 @@
 <table class="table table-striped">
         <thead>
             <tr>
-            <th> <a target="_blank"
-    class="btn btn-info pull-right"
-    href="{% url 'create_vote'  %}">
-    Create Vote
-</a></th>
-                <th><a target="_blank"
-    class="btn btn-info pull-right"
-    href="{% url 'vote_list'  %}">
+            <th> </th>
+                <th>
      List Vote</th>
              <th>
 </a></th>
               <th></th>
-              <th><a target="_blank"
+              <th><a
     class="btn btn-info pull-right"
     href="{% url 'create_ticket' %}">
     Add Ticket
@@ -38,7 +32,7 @@
                     <td>{{ Ticket.content }}</td>
                     <td>{{ Ticket.date }}</td>
                     <td>{{ Ticket.resolved }}</td>
-                    <td><a target="_blank"
+                    <td><a
                  class="btn btn-info pull-right"
                    href="{% url 'ticket_detail' Ticket.id %}">Read More</a></td>
 

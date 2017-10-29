@@ -17,9 +17,11 @@ from django.contrib import admin
 
 from accounts import views as accounts_views
 from accounts.views import register,profile, login, logout
-from ticket import views
+#from ticket import views
 from home import views
 from ticket import views as ticket_views
+from vote import views as vote_views
+from Payment import views as Payment_views
 
 
 
@@ -40,8 +42,15 @@ urlpatterns = [
     url(r'^(?P<id>\d+)delete/$', ticket_views.delete_ticket, name='delete'),
 
     ################# Vote ###############
-    url(r'^create_vote/$', ticket_views.create_vote, name='create_vote'),
-    url(r'^vote/list/$', ticket_views.vote_list, name='vote_list'),
+
+    url(r'^(?P<id>\d+)/vote/$', vote_views.create_vote, name='create_vote'),
+    #url(r'^vote/list/$', ticket_views.vote_list, name='vote_list'),
+
+    ################# Feature Pay #####################
+
+    url(r'^pay_form/$', Payment_views.pay_form, name='pay_form'),
+    url(r'^(?P<id>\d+)payment_form/$', Payment_views.payment_form, name='payment_form'),
+    url(r'^list_feature/$', Payment_views.list_feature, name='list_feature'),
 
 
 ]

@@ -6,5 +6,8 @@ class CreateVoteForm(forms.ModelForm):
     ''' A form for creating a vote. '''
 
     class Meta:
-        model = Vote
-        fields = "__all__"
+            model = Vote
+            exclude =  ['user']
+
+
+

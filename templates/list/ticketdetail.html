@@ -19,12 +19,12 @@
                     <p><button class="btn btn-default" onclick="location.href={% url 'edit' post.id %}">Edit</button></p>
                     <p><button class="btn btn-default" onclick="location.href={% url 'delete' post.id %}">Delete</button></p>
                     {{ post.date }}
-
-
+                    <p><a class="btn btn-default" href="{% url 'create_vote' post.id %}">Vote (10)</a></p>
+                     {{ post.published_date }}
 <br>
 
 
-                    <a target="_blank"
+                    <a
     class="btn btn-info pull-right"
     href="{% url 'tickets_list'  %}">
     Back to List

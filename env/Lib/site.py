@@ -77,7 +77,7 @@ except NameError:
 # Prefixes for site-packages; add additional prefixes like /usr/local here
 PREFIXES = [sys.prefix, sys.exec_prefix]
 # Enable per user site-packages directory
-# set it to False to disable the feature or True to force the feature
+# set it to False to disable the Payment or True to force the Payment
 ENABLE_USER_SITE = None
 # for distutils.commands.install
 USER_SITE = None

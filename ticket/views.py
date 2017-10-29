@@ -1,10 +1,15 @@
+import datetime
+
 from django.shortcuts import render, get_object_or_404
+
+
 from ticket.forms import CreateTicketForm
-from vote.forms import CreateVoteForm
+from Payment.forms import CreateFeatureForm
 from django.utils import timezone
 from .models import Ticket
-from django.shortcuts import redirect, reverse
-from vote.models import Vote
+from django.shortcuts import redirect
+from Payment.models import FeaturePay
+
 
 
 
@@ -70,71 +75,14 @@ def delete_ticket(request, id):
 ##################  Vote ################
 
 
-def vote_list(request):
-    '''Show a listed tickets'''
+def vote_create(request):
+    '''Show a listed votes'''
     form = Vote.objects.all()
     return render(request, 'votex/votelist.html', {'form': form})
 
 
-def create_vote(request):
-    ''' Add a new ticket to the system. '''
-    if request.method == "POST":
-        form = CreateVoteForm(request.POST)
-        if form.is_valid():
-            list = form.save(commit=False)
-            list.save()
-        return render(request, 'votex/votedetail.html' )
-
-
-    else:
-        form = CreateVoteForm
-    return render(request, 'votex/voteme.html', {
-        'form': form
-    })
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class CreateTicketView(generic.detail.DetailView):
-#     ''' Create a new ticket.'''
-#     form_class = CreateTicketForm
-#
-#
-#     # def post(self):
-#     #
-#     #   #if self.form_class.data['type'] == 'feature':
-#     #    #   return render(request, "add_forms.html", {"form_class": form_class})
-#     #   #if self.form_data['type'] == 'bug':
-#     #    #   return render(request, "add_forms.html", {"form_class": form_class})
-#     #
-#     #        if self.form_data['type'] == 'feature':
-#     #            def server_create(request, template_name='add_forms.html'):
-#     #                form = ServerForm(request.POST or None)
-#     #                if form.is_valid():
-#     #                    form.save()
-#     #                    return redirect('server_list')
-#     #                return render(request, template_name, {'form_class': form_class})
-#     #
-#     #            #return render(request, "add_forms.html", {"form_class": form_class})
-#     #            ###Create the feature with paypal
-#     #
-#     #        if self.form_data['type'] == 'bug':
-#     #            return render(request, "add_forms.html", {"form_class": form_class})
-#

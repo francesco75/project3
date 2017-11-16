@@ -23,10 +23,9 @@ def paypal_form_for(Featurepay, user):
             "invoice": uuid.uuid4(),
             "notify_url": settings.PAYPAL_NOTIFY_URL,
             "return_url": "%s/paypal-return/" % settings.SITE_URL,
-
+            "custom": "%s-%s" % (Featurepay.id, user.id)
 
         }
-
         if settings.DEBUG:
             html = PayPalPaymentsForm(initial=paypal_dict, button_type='subscribe').sandbox()
         else:

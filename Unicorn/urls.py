@@ -26,6 +26,8 @@ from Payment import views as Payment_views
 
 
 urlpatterns = [
+    ################### AUTHENTICATION ###############
+
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.get_index),
     url(r'^register/$', accounts_views.register, name='register'),
@@ -44,12 +46,16 @@ urlpatterns = [
     ################# Vote ###############
 
     url(r'^(?P<id>\d+)/vote/$', vote_views.create_vote, name='create_vote'),
-    #url(r'^vote/list/$', ticket_views.vote_list, name='vote_list'),
+
 
     ################# Feature Pay #####################
 
     url(r'^pay_form/$', Payment_views.pay_form, name='pay_form'),
     url(r'^(?P<id>\d+)payment_form/$', Payment_views.payment_form, name='payment_form'),
+
+    url(r'^paypal-return/$', Payment_views.payment_finish, name='paypal-return'),
+    url(r'^complete/$', Payment_views.payment_complete, name='complete'),
+    #url(r'^(?P<id>\d+)paypal-return/$', Payment_views.payment_complete, name='payment complete'),
     url(r'^list_feature/$', Payment_views.list_feature, name='list_feature'),
 
 

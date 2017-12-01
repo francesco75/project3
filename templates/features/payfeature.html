@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% load bootstrap_tags %}
 {% block content %}
-    <form role="form" method="post" action ="{% url 'pay_form' %}" >
+    <form role="form" method="post" action="{% url 'payment_form' ticket.id %}" >
         <legend>Create the Feature Payment</legend>
         {% csrf_token %}
             {{ form| as_bootstrap }}
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Create Feature</button>
+            <button type="submit" class="btn btn-primary">Create Payment</button>
         </div>
     </form>
 {% endblock %}

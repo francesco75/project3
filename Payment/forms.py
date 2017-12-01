@@ -9,4 +9,4 @@ class CreateFeatureForm(forms.ModelForm):
 
     class Meta:
         model = FeaturePay
-        exclude = ['user','is_complete','ticket']
+        fields = ['price', ]

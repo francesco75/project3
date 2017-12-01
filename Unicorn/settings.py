@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'emoticons',
     'paypal.standard.ipn',
     'Payment',
+    'charts',
 )
 
 

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<head>
+  <link type="text/css" rel="stylesheet" src="{% static 'lib/css/bootstrap.min.css' %}">
+  <link type="text/css" rel="stylesheet" src="{% static 'lib/css/dc.css' %}">
+  <link type="text/css" rel="stylesheet" src="{% static 'lib/css/Keen-dashboards.css' %}">
+</head>
+
+
+
+       <div class="row">
+
+
+
+          <!-- Time Chart -->
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                  <h4>Number of Payment Monthly</h4>
+              </div>
+              <div class="chart-stage">
+                <div id="time-chart"></div>
+              </div>
+            </div>
+                <!-- Time Chart -->
+          </div>
+       <script type="text/javascript" src="{% static 'js/graph.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/intro.js' %}"></script>
+       <script type="text/javascript"  src="{% static 'lib/js/bootstrap.min.js' %}"></script>
+       <script type="text/javascript" src="{% static 'lib/js/crossfilter.js' %}"></script>
+       <script type="text/javascript"  src="{% static 'lib/js/dc.js' %}"></script>
+       <script type="text/javascript"  src="{% static 'lib/js/jquery.min.js' %}"></script>
+       <script type="text/javascript"  src="{% static 'lib/js/d3.js' %}"></script>
+       <script type="text/javascript"  src="{% static 'lib/js/keen.min.js' %}"></script>
+       <script type="text/javascript"  src="{% static 'lib/js/queue.js' %}"></script>
+
+
+
+
+
+
+{% endblock %}

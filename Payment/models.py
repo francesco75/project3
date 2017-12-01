@@ -5,15 +5,14 @@ from paypal.standard.forms import PayPalPaymentsForm
 from django.utils import timezone
 # Create your models here.
 
-
-
-
 class FeaturePay(models.Model):
-    name = models.CharField(max_length=254)
+
+    '''A single payment for a particular "feature"'''
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payment')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     date = models.DateTimeField(auto_now=True)
-    #ticket = models.ForeignKey('ticket.Ticket')
+    ticket = models.ForeignKey('ticket.Ticket')
     is_complete = models.BooleanField(default=False)
 
     @property
@@ -30,4 +29,4 @@ class FeaturePay(models.Model):
         return PayPalPaymentsForm(initial=paypal_dict)
 
     def __unicode__(self):
-        return self.name
+        return str(self.id)

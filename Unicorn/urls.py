@@ -22,7 +22,7 @@ from home import views
 from ticket import views as ticket_views
 from vote import views as vote_views
 from Payment import views as Payment_views
-
+from charts import views as charts_views
 
 
 urlpatterns = [
@@ -47,16 +47,17 @@ urlpatterns = [
 
     url(r'^(?P<id>\d+)/vote/$', vote_views.create_vote, name='create_vote'),
 
-
     ################# Feature Pay #####################
 
-    url(r'^pay_form/$', Payment_views.pay_form, name='pay_form'),
-    url(r'^(?P<id>\d+)payment_form/$', Payment_views.payment_form, name='payment_form'),
-
+    url(r'^(?P<id>\d+)/payment_form/$', Payment_views.payment_form, name='payment_form'),
+    url(r'^payments/(?P<id>\d+)/$', Payment_views.payment_detail, name='payment_detail'),
+    url(r'^payment-stats/$', Payment_views.payment_stats, name='payment_stats'),
     url(r'^paypal-return/$', Payment_views.payment_finish, name='paypal-return'),
-    url(r'^complete/$', Payment_views.payment_complete, name='complete'),
+    #url(r'^complete/$', Payment_views.payment_complete, name='complete'),
     #url(r'^(?P<id>\d+)paypal-return/$', Payment_views.payment_complete, name='payment complete'),
     url(r'^list_feature/$', Payment_views.list_feature, name='list_feature'),
 
+  ##################### Chart ##########################
+    url(r'^chart/$', charts_views.charts, name='chart'),
 
 ]

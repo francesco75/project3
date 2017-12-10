@@ -51,13 +51,12 @@ urlpatterns = [
 
     url(r'^(?P<id>\d+)/payment_form/$', Payment_views.payment_form, name='payment_form'),
     url(r'^payments/(?P<id>\d+)/$', Payment_views.payment_detail, name='payment_detail'),
-    url(r'^payment-stats/$', Payment_views.payment_stats, name='payment_stats'),
     url(r'^paypal-return/$', Payment_views.payment_finish, name='paypal-return'),
     #url(r'^complete/$', Payment_views.payment_complete, name='complete'),
     #url(r'^(?P<id>\d+)paypal-return/$', Payment_views.payment_complete, name='payment complete'),
     url(r'^list_feature/$', Payment_views.list_feature, name='list_feature'),
 
   ##################### Chart ##########################
-    url(r'^chart/$', charts_views.charts, name='chart'),
-
+    url(r'^charts/$', charts_views.charts, name='charst'),
+    url(r'^chart-data/$', charts_views.chart_data, name='chart_data'),
 ]

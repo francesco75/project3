@@ -1,17 +1,18 @@
 queue()
-   .defer(d3.json, "data")
+
+   .defer(d3.json, "/chart-data/")
    .await(makeGraphs);
 
 function makeGraphs(error, data) {
-
-   //Clean projectsJson data
-
-   var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
-   data.forEach(function (d) {
-       d["date"] = dateFormat.parse(d["date"]);
-       d["date"].setDate(1);
-       d["price"] = d["price"];
-   });
+   console.log(data);
+   //Clean  data
+     //var datajson = data;
+     //var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
+//     datajson.forEach(function (d) {
+//        d["date"] = dateFormat.parse(d["date"]);
+//       d["date"].setDate(1);
+//        d["price"] = +d["price"];
+//      });
 
 
    //Create a Crossfilter instance
@@ -21,6 +22,7 @@ function makeGraphs(error, data) {
    var dateDim = ndx.dimension(function (d) {
        return d["date"];
    });
+
    var totalPrice = ndx.dimension(function (d) {
        return d["price"];
    });
@@ -35,11 +37,11 @@ function makeGraphs(error, data) {
 
 
    //Define values (to be used in charts)
-   var minDate = dateDim.bottom(1)[0]["date"];
-   var maxDate = dateDim.top(1)[0]["date"];
+   var minDate = dateDim.bottom(1)[0];
+   var maxDate = dateDim.top(1)[0];
 
    //Charts
-   var timeChart = dc.lineChart("#time-chart");
+   var timeChart = dc.barChart("#time-chart");
 
 
 

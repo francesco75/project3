@@ -7,9 +7,13 @@ from django.conf import settings
 
 TYPE_CHOICES = (
   ('bug', 'bug'),
-  ('Payment', 'Payment'),
+  ('feature', 'feature'),
 )
-
+STAT = (
+    ('To Do','To Do'),
+    ('Doing', 'Doing'),
+    ('Done', 'Done'),
+)
 
 def _(param):
     pass
@@ -23,7 +27,9 @@ class Ticket(models.Model):
     type = models.CharField(max_length=254,choices=TYPE_CHOICES, default=TYPE_CHOICES)
     content = models.TextField()
     date = models.DateField(_("Date"), default=datetime.date.today)
+    status = models.CharField(max_length=254, choices=STAT, default=STAT)
     resolved = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.name

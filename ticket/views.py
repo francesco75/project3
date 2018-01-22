@@ -2,25 +2,17 @@ import datetime
 
 from django.shortcuts import render, get_object_or_404
 
-
 from ticket.forms import CreateTicketForm
 from Payment.forms import CreateFeatureForm
 from django.utils import timezone
 from .models import Ticket
+from vote.models import Vote
 from django.shortcuts import redirect
 from Payment.models import FeaturePay
-
-
-
-
-
 
 """
 CRUD - create, retreive, update, delete
 """
-
-
-
 
 def edit_ticket(request, id):
     post = get_object_or_404(Ticket, pk=id)
@@ -38,14 +30,18 @@ def edit_ticket(request, id):
 
 def tickets_list(request):
      '''Show a listed tickets'''
-     form = Ticket.objects.all()
-     return render(request,'list/listticket.html',{'form':form} )
+     tickets = Ticket.objects.all()
+     return render(request,'list/listticket.html',{'form':tickets} )
 
 
 def ticket_detail(request, id):
-           ''' Show a particular ticket in the system. '''
-           post = get_object_or_404(Ticket, pk=id)
-           return render(request, "list/ticketdetail.html", {'post': post})
+    ''' Show a particular ticket in the system. '''
+    ticket = get_object_or_404(Ticket, pk=id)
+    votes_for_ticket = Vote.objects.filter(ticket=ticket)
+    return render(request, "list/ticketdetail.html", {
+        'post': ticket,
+        'votes_for_ticket': votes_for_ticket
+    })
 
 
 def create_ticket(request):
@@ -69,9 +65,6 @@ def delete_ticket(request, id):
     post.delete()
     return render(request,"list/delete_ticket.html")
 
-
-
-
 ##################  Vote ################
 
 
@@ -79,10 +72,3 @@ def vote_create(request):
     '''Show a listed votes'''
     form = Vote.objects.all()
     return render(request, 'votex/votelist.html', {'form': form})
-
-
-
-
-
-
-

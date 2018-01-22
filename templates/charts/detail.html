@@ -5,26 +5,114 @@
   <link type="text/css" rel="stylesheet" src="{% static 'lib/css/bootstrap.min.css' %}">
   <link type="text/css" rel="stylesheet" src="{% static 'lib/css/dc.css' %}">
   <link type="text/css" rel="stylesheet" src="{% static 'lib/css/Keen-dashboards.css' %}">
+  <link type="text/css" rel="stylesheet" src="{% static 'css/custom.css'%}">
+  <link type="text/css" rel="stylesheet" src="{% static 'css/introjs.css'%}">
 </head>
 
 
 
        <div class="row">
+           <!-- Row Chart -->
+           <div class="col-sm-6">
+                   <div class="chart-wrapper">
+                       <div class="chart-title">
+                          <h1 align="center">Payment Section</h1>
+                          <h4>Highest earning feature requests</h4>
+                       </div>
+                       <div class="chart-stage">
+                           <div id="feature-row-chart"></div>
+                       </div>
+                   </div>
+               </div>
+          <!-- Row Chart -->
 
 
+           <!-- Menu Feature Chart-->
+                 <div class="col-sm-6">
+              <div class="chart-wrapper">
+               <div class="chart-title">
+                   <h4>Payment Feature</h4>
+               </div>
+               <div class="chart-stage">
+                   <div id="menu-select"></div>
+               </div>
+              </div>
+           </div>
+           <!-- Menu Feature Chart -->
+             </div>
+        </div>
 
-          <!-- Time Chart -->
+
+           <!--Total Chart -->
+        <div class="row">
           <div class="col-sm-12">
             <div class="chart-wrapper">
               <div class="chart-title">
-                  <h4>Number of Payment Monthly</h4>
+                  <h4>Total Payments</h4>
               </div>
               <div class="chart-stage">
-                <div id="time-chart"></div>
+                <div id="total-chart"></div>
+                  <hr>
               </div>
             </div>
-                <!-- Time Chart -->
           </div>
+                <!-- Total Chart -->
+
+            <!-- Pie Chart -->
+            <div class="row">
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                  <h1 align="center">Vote Section</h1>
+                  <h4 align="center" >Total votes for bugs vs. features</h4>
+              </div>
+              <div class="chart-stage">
+                <div id="bug-pie-chart"></div>
+              </div>
+            </div>
+          </div>
+         <!-- Pie Chart -->
+
+         <!-- Menu Vote Chart-->
+              <div class="col-sm-6">
+              <div class="chart-wrapper">
+               <div class="chart-title">
+                   <h4>The Highest Vote </h4>
+               </div>
+               <div class="chart-stage">
+                   <div id="bug-feature-chart"></div>
+               </div>
+              </div>
+           </div>
+                <!-- Menu Vote Chart -->
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                  <h4>Total Vote Vs Date</h4>
+              </div>
+              <div class="chart-stage">
+                <div id="menu-vote"></div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                  <h4>Total Vote Vs Time</h4>
+              </div>
+              <div class="chart-stage">
+                <div id="time-row-chart"></div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
 
        <script type="text/javascript"  src="{% static 'lib/js/jquery.min.js' %}"></script>
        <script type="text/javascript"  src="{% static 'lib/js/bootstrap.min.js' %}"></script>
@@ -36,6 +124,7 @@
 
        <script type="text/javascript"  src="{% static 'lib/js/keen.min.js' %}"></script>
            <script type="text/javascript" src="{% static 'js/graph.js' %}"></script>
+           <script type="text/javascript" src="{% static 'js/graphic.js' %}"></script>
        <script type="text/javascript" src="{% static 'js/intro.js' %}"></script>
 
 

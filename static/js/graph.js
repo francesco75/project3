@@ -6,62 +6,65 @@ queue()
 function makeGraphs(error, data) {
    console.log(data);
    //Clean  data
-     //var datajson = data;
-     //var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
-//     datajson.forEach(function (d) {
-//        d["date"] = dateFormat.parse(d["date"]);
-//       d["date"].setDate(1);
-//        d["price"] = +d["price"];
-//      });
+
+      data.forEach(function(d) {
+      d.feature_name = d.feature_name;
+      d.price = +d.price;
+  });
 
 
    //Create a Crossfilter instance
    var ndx = crossfilter(data);
 
    //Define Dimensions
-   var dateDim = ndx.dimension(function (d) {
+   var featureDim = ndx.dimension(function (d) {
+       return d["feature_name"];
+   });
+
+   var featuredate = ndx.dimension(function (d) {
        return d["date"];
    });
 
-   var totalPrice = ndx.dimension(function (d) {
+
+//   //Calculate metrics
+        var totalfeature = featureDim.group().reduceSum(function (d) {
+       return d["price"];
+   });
+   var all = ndx.groupAll();
+   var total = ndx.groupAll().reduceSum(function (d) {
        return d["price"];
    });
 
-
-
-   //Calculate metrics
-   var numProjectsByDate = totalPrice.group();
-
-
-
-
-
    //Define values (to be used in charts)
-   var minDate = dateDim.bottom(1)[0];
-   var maxDate = dateDim.top(1)[0];
-
    //Charts
-   var timeChart = dc.barChart("#time-chart");
+    selectField = dc.selectMenu('#menu-select')
+       .dimension(featureDim)
+       .group(totalfeature);
+
+    var featureTypeChart = dc.rowChart("#feature-row-chart");
+    var totalchart = dc.numberDisplay("#total-chart");
+
+   featureTypeChart
+       .width(300)
+       .height(250)
+       .dimension(featureDim)
+       .group(totalfeature)
+       .xAxis().ticks(4);
 
 
 
+   totalchart
+       .formatNumber(d3.format("d"))
+       .valueAccessor(function (d) {
+           return d;
+       })
+       .group(total)
+       .formatNumber(d3.format(".3s"));
 
-
-
-
- timeChart
-       .width(800)
-       .height(200)
-       .margins({top: 10, right: 50, bottom: 30, left: 50})
-       .dimension(dateDim)
-       .group(numProjectsByDate)
-       .transitionDuration(500)
-       .x(d3.time.scale().domain([minDate, maxDate]))
-       .elasticY(true)
-       .xAxisLabel("Monthly")
-       .yAxis().ticks(4);
 
 
 
    dc.renderAll();
+
+
 }

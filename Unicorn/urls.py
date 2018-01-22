@@ -30,6 +30,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.get_index),
+    url(r'^home/$', views.get_index),
     url(r'^register/$', accounts_views.register, name='register'),
     url(r'^profile/$', accounts_views.profile, name='profile'),
     url(r'^login/$', accounts_views.login, name='login'),
@@ -52,11 +53,10 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/payment_form/$', Payment_views.payment_form, name='payment_form'),
     url(r'^payments/(?P<id>\d+)/$', Payment_views.payment_detail, name='payment_detail'),
     url(r'^paypal-return/$', Payment_views.payment_finish, name='paypal-return'),
-    #url(r'^complete/$', Payment_views.payment_complete, name='complete'),
-    #url(r'^(?P<id>\d+)paypal-return/$', Payment_views.payment_complete, name='payment complete'),
-    url(r'^list_feature/$', Payment_views.list_feature, name='list_feature'),
+    url(r'^(?P<id>\d+)cancel/$', Payment_views.paypal_cancel, name = 'cancel'),
 
   ##################### Chart ##########################
     url(r'^charts/$', charts_views.charts, name='charst'),
     url(r'^chart-data/$', charts_views.chart_data, name='chart_data'),
+    url(r'^chart-vote/$', charts_views.chart_vote, name='chart_vote'),
 ]

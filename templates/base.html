@@ -14,12 +14,17 @@
 <div class="container">
     <div class="masthead">
         <ul class="nav nav-pills pull-right">
-            <li><a href=<"/">Home</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/register">Register</a></li>
             <li><a href="/ticket/list">Ticket</a></li>
-            <li><a href="/list_feature">Features</a></li>
-            <li><a href="/chart">Charts</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/charts">Charts</a></li>
+            <li>{% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Log Out</a>
+                 {% else %}
+
+                       <a href="{% url 'login' %}">Log In</a>
+                 {% endif %}
+</a></li>
 
        </ul>
        <h2><span class="fui-settings-16 muted">Unicorn Attractor</span></h2>
@@ -45,8 +50,11 @@
 
    <hr>
 
-   <div class="footer">
-       <p> </p>
+   <div class="footer" align="center">
+       <p>Unicorn Attractor<br>
+       @ Code Institute<br>
+       Web Developer: Scollo Francesco<br>
+       2017/2018 </p>
    </div>
 </div>
 </body>

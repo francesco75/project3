@@ -24,7 +24,7 @@ def create_vote(request, id):
     vote = Vote(ticket=ticket, user=request.user)
 
 
-    if ticket.type == 'Payment':
+    if ticket.type == 'feature':
         vote.completed = True
         vote.save()
         #  Confirm Success message ######
@@ -45,3 +45,4 @@ def create_vote(request, id):
                          "Your Vote has been added to the bug!")
 
     return redirect('ticket_detail', id)
+

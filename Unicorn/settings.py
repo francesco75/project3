@@ -59,7 +59,7 @@ INSTALLED_APPS = (
     'charts',
 )
 
-
+DISQUS_WEBSITE_SHORTNAME = 'yourshortname'
 SITE_ID = 1
 
 AUTH_USER_MODEL = 'accounts.User'

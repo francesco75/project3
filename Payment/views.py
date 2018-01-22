@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from ticket.models import Ticket
 from Payment.forms import CreateFeatureForm
 from Payment.models import FeaturePay
+from vote.models import Vote
 
 def payment_form(request, id):
 ############# Create  Payment#########
@@ -34,6 +35,12 @@ def payment_detail(request, id):
 def payment_finish(request):
     return render(request, 'features/paypal-complete.html')
 
+def paypal_cancel(request,id):
+    post = get_object_or_404(FeaturePay, pk=id)
+    form = Vote.objects.last()
+    form.delete()
+    post.delete()
+    return render(request, 'features/paypal_cancel.html')
 
 
 
@@ -53,10 +60,6 @@ def payment_finish(request):
 ############# List Payments ########################
 
 
-def  list_feature(request):
-    '''Show a listed Feature'''
-    form = FeaturePay.objects.all()
-    return render( request, 'features/featurelist.html', {'form': form})
 
 
 

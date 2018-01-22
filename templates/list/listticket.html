@@ -6,7 +6,7 @@
             <tr>
             <th> </th>
                 <th>
-     List Vote</th>
+            </th>
              <th>
 </a></th>
               <th></th>
@@ -21,6 +21,7 @@
                 <th>Type</th>
                 <th>Content</th>
                 <th>Date</th>
+                <th>Status</th>
                 <th>Resolved</th>
             </tr>
         </thead>
@@ -31,10 +32,13 @@
                     <td>{{ Ticket.type }}</td>
                     <td>{{ Ticket.content }}</td>
                     <td>{{ Ticket.date }}</td>
+                    <td>{{ Ticket.status }}</td>
                     <td>{{ Ticket.resolved }}</td>
                     <td><a
-                 class="btn btn-info pull-right"
-                   href="{% url 'ticket_detail' Ticket.id %}">Read More</a></td>
+    class="btn btn-info pull-right"
+    href="{% url 'ticket_detail' Ticket.id %}">
+    Read More
+</a></td>
 
                 </tr>
           {% endfor %}

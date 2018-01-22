@@ -10,3 +10,6 @@ class Vote(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='votes')
     completed = models.BooleanField(default=False)
 
+
+
+

@@ -12,10 +12,10 @@
                     <h2>{{ payment.price }}</h2>
                     <p>{{ payment.paypal_form.sandbox  }}</p>
                     <br>
-                    <a class="btn btn-info pull-right" href="{% url 'list_feature'  %}">
-                        Back to List
-                    </a>
-                </div>
+
+                  <button class="btn btn-info pull-left" onclick="location.href={% url 'cancel' payment.id %}">Cancel Payment</button>
+
+                                    </div>
             </div>
         </div>
     </div>

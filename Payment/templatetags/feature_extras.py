@@ -24,6 +24,7 @@ def paypal_form_for(FeaturePay, user):
             "invoice": uuid.uuid4(),
             "notify_url": settings.PAYPAL_NOTIFY_URL,
             "return_url": "%s/paypal-return/" % settings.SITE_URL,
+            "paypal_cancel": "%s/paypal_cancel/" % settings.SITE_URL,
             "custom": "%s-%s" % (FeaturePay.id, user.id)
 
         }

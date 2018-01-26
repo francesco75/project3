@@ -12,5 +12,5 @@ six==1.10.0
 wheel==0.24.0
 django-paypal==0.3.6
 stripe
-git+https://github.com/francesco75/project3.git
+
 gunicorn==19.4

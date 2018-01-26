@@ -10,4 +10,4 @@ python-dateutil==2.4.2
 six==1.10.0
 wheel==0.24.0
 django-paypal==0.2.7
--r settings/staging.py
+-r settings/requirements/staging.txt

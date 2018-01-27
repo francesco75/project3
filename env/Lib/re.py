@@ -301,7 +301,7 @@ def _pickle(p):
 copy_reg.pickle(_pattern_type, _pickle, _compile)
 
 # --------------------------------------------------------------------
-# experimental stuff (see python-dev discussions for details)
+# experimental stuff (see python-dev.txt discussions for details)
 
 class Scanner:
     def __init__(self, lexicon, flags=0):

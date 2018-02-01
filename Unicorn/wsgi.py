@@ -16,4 +16,4 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.staging")
 #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Unicorn.settings")
 
 application = get_wsgi_application()
-application = DjangoWhiteNoise(application)
+application = DjangoWhiteNoise(application, root='/path/to/static/files')

@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='counter',
             name='user',
-            field=models.ForeignKey(default=0, to='ticket.Ticket'),
+            field=models.ForeignKey(to='ticket.Ticket'),
             preserve_default=False,
         ),
     ]

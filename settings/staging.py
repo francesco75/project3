@@ -1,13 +1,16 @@
 
 from base import *
-#import dj_database_url
+import dj_database_url
 DEBUG = False
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        #dj_database_url.config('CLEARDB_DATABASE_URL'),
+        # 'ENGINE': 'CLEARDB_DATABASE_URL',
+        #'NAME': os.path.join(BASE_DIR, 'CLEARDB_DATABASE_URL'),
+       # 'default': dj_database_url.config('CLEARDB_DATABASE_URL')
+
     }
 }
 

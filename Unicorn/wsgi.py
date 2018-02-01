@@ -12,8 +12,8 @@ import os
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.staging")
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Unicorn.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Unicorn.settings.staging")
+#os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Unicorn.settings")
 
 application = get_wsgi_application()
 application = DjangoWhiteNoise(application)

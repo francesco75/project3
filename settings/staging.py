@@ -9,7 +9,7 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
          #'ENGINE': 'CLEARDB_DATABASE_URL',
         #'NAME': os.path.join(BASE_DIR, 'CLEARDB_DATABASE_URL'),
-        'default': dj_database_url.config('CLEARDB_DATABASE_URL')
+         dj_database_url.config('CLEARDB_DATABASE_URL')
 
     }
 }

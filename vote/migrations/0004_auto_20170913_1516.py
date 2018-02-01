@@ -15,6 +15,10 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
+            model_name='poll',
+            name='thread',
+        ),
+        migrations.RemoveField(
             model_name='pollsubject',
             name='poll',
         ),

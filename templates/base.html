@@ -8,7 +8,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cerulean/bootstrap.min.css">
-
+<link type="text/css" rel="stylesheet" src="{% static 'lib/css/dc.css' %}">
+  <link type="text/css" rel="stylesheet" src="{% static 'lib/css/Keen-dashboards.css' %}">
+  <link type="text/css" rel="stylesheet" src="{% static 'css/custom.css'%}">
+  <link type="text/css" rel="stylesheet" src="{% static 'css/introjs.css'%}">
 </head>
 <body>
 <div class="container">
@@ -63,5 +66,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js">
 </script>
+
+       <script type="text/javascript" src="{% static 'lib/js/crossfilter.js' %}"></script>
+           <script type="text/javascript"  src="{% static 'lib/js/d3.js' %}"></script>
+       <script type="text/javascript"  src="{% static 'lib/js/dc.js' %}"></script>
+           <script type="text/javascript"  src="{% static 'lib/js/queue.js' %}"></script>
+           <script type="text/javascript"  src="{% static 'lib/js/jquery.min.js' %}"></script>
+
+       <script type="text/javascript"  src="{% static 'lib/js/keen.min.js' %}"></script>
+           <script type="text/javascript" src="{% static 'js/graph.js' %}"></script>
+           <script type="text/javascript" src="{% static 'js/graphic.js' %}"></script>
+       <script type="text/javascript" src="{% static 'js/intro.js' %}"></script>
+
+
+
+
 
 </html>

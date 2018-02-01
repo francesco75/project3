@@ -16,5 +16,5 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.staging")
 #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Unicorn.settings")
 
 application = get_wsgi_application()
-application = WhiteNoise(application, root='/path/to/static/files')
+application = WhiteNoise(application, root='/path/static/files')
 application.add_files('/path/to/more/static/files', prefix='more-files/')

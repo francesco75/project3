@@ -2,7 +2,7 @@ from base import *
 
 DEBUG = True
 
-#INSTALLED_APPS = ('debug_toolbar',)
+INSTALLED_APPS.append('debug_toolbar')
 
 DATABASES = {
     'default': {
@@ -13,6 +13,6 @@ DATABASES = {
 
 
 # Paypal environment variables
-SITE_URL = 'http://127.0.0.1:8000'
-PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+SITE_URL = 'https://project3-unicorn.herokuapp.com'
+PAYPAL_NOTIFY_URL = 'https://project3-unicorn.herokuapp.com'
 PAYPAL_RECEIVER_EMAIL = 'frscollo@hotmail.com'

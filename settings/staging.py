@@ -13,7 +13,7 @@ DATABASES = {
 
 
 # Paypal environment variables
-PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+PAYPAL_NOTIFY_URL = 'https://project3-unicorn.herokuapp.com'
 PAYPAL_RECEIVER_EMAIL = 'frscollo@hotmail.com'
 
 SITE_URL = 'https://project3-unicorn.herokuapp.com'

@@ -51,7 +51,7 @@ INSTALLED_APPS = (
     'disqus',
     'ticket',
     'vote',
-    'debug_toolbar',
+    #'debug_toolbar',
     'tinymce',
     'emoticons',
     'paypal.standard.ipn',
@@ -78,7 +78,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
+
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
 
 )
 
@@ -130,14 +132,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-SITE_URL = 'http://127.0.0.1:8000'
-PAYPAL_NOTIFY_URL = 'http://127.0.0.1/a-very-hard-to-guess-url/'
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", "js",
+                               "tinymce", "tinymce.min.js")
+
+SITE_URL = 'https://project3-unicorn.herokuapp.com'
+PAYPAL_NOTIFY_URL = 'https://project3-unicorn.herokuapp.com'
 PAYPAL_RECEIVER_EMAIL = 'frscollo@hotmail.com'
 

@@ -12,11 +12,24 @@
   <link type="text/css" rel="stylesheet" src="{% static 'lib/css/keen-dashboards.css' %}">
   <link type="text/css" rel="stylesheet" src="{% static 'css/custom.css'%}">
   <link type="text/css" rel="stylesheet" src="{% static 'css/introjs.css'%}">
+  <link type="text/css" rel="stylesheet" src="{% static 'css/style.css'%}">
 </head>
 <body>
 <div class="container">
-    <div class="masthead">
-        <ul class="nav nav-pills pull-right">
+    <!--<div class="masthead">-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+     <div class=" navbar-header">
+          <a class="navbar-brand" href="/home">Unicorn Attractor</a>
+          <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myCollapsingList">
+          <!-- you can add a glyph of choosing but icon-bar is becoming the defacto-->
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+     </div>
+
+        <ul  id="myCollapsingList" class="nav nav-pills pull-right collapse navbar-collapse">
             <li><a href="/home">Home</a></li>
             <li><a href="/register">Register</a></li>
             <li><a href="/ticket/list">Ticket</a></li>
@@ -30,11 +43,6 @@
 </a></li>
 
        </ul>
-       <h2><span class="fui-settings-16 muted">Unicorn Attractor</span></h2>
-   </div>
-
-   <hr>
-
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
@@ -45,7 +53,11 @@
         </div>
     {% endif %}
 
-   <div class="container">
+   </nav>
+</div>
+<br>
+<br><br><br>
+   <div class="container ">
        {% block content %}
        {% endblock %}
 

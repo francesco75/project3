@@ -85,3 +85,5 @@ Unicorn uses the Model with Database, View,  Template with html file  Url links
 ### Deployment
   - GitHub
   - Heroku
+      - Dev : Manage the debug_toolbar and debug = true and database sqlite
+      - Staging : Manage the url config database and mysql-python

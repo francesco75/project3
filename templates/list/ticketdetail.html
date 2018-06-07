@@ -24,9 +24,9 @@
               {% disqus_show_comments %}
         </div>
                 <div class="col-md-3">
+                         <p><button class="btn btn-default" onclick="location.href={% url 'edit' post.id %}">Edit</button></p>
+                         <p><button class="btn btn-default" onclick="location.href={% url 'delete' post.id %}">Delete</button></p>
 
-                    <p><button class="btn btn-default" onclick="location.href={% url 'edit' post.id %}">Edit</button></p>
-                    <p><button class="btn btn-default" onclick="location.href={% url 'delete' post.id %}">Delete</button></p>
                 </div>
                  <div class="col-md-3">
                      <h3>Vote your Ticket</h3>

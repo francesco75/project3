@@ -80,10 +80,56 @@ Unicorn uses the Model with Database, View,  Template with html file  Url links
                
    - Laptop M/S  :  All the pages work well and navbar works perfect.
                The Charts and buttons work perfect.
-               The Testing is Good.           
-              
+               The Testing is Good.
+                          
+ ## Testing Speed Pages               
+ ### PageSpeed Tools
+   - Home 
+       - Desktop   
+           Speed: Unavailable;
+           Optimization: Good
+       - Mobile
+           Speed: Unavailable
+           Optimization: Medium 79/100
+   - Register
+        - Desktop   
+           Speed: Unavailable
+           Optimization: Good 83/100
+        - Mobile
+           Speed: Unavailable
+           Optimization: Medium 79/100
+   - Chart
+        - Desktop   
+           Speed: Unavailable
+           Optimization: Good 82/100
+        - Mobile
+           Speed: Unavailable
+           Optimization: Medium 75/100
+   - Log in                             
+       - Desktop   
+           Speed: Unavailable
+           Optimization: Good 83/100
+       - Mobile
+           Speed: Unavailable
+           Optimization: Medium 79/100
+   - Ticket 
+        - Desktop   
+           Speed: Unavailable
+           Optimization: Good 83/100
+        - Mobile
+           Speed: Unavailable
+           Optimization: Medium 79/100  
+   - Ticket Detail
+        - Desktop   
+           Speed: Unavailable
+           Optimizaton: Good 83/100
+        - Mobile
+           Speed: Unavailable
+           Optimization: Good 79/100     
 ### Deployment
   - GitHub
   - Heroku
-      - Dev : Manage the debug_toolbar and debug = true and database sqlite
-      - Staging : Manage the url config database and mysql-python
+      - base.py : Replace the settings.py 
+      - Dev.py : Manage the debug_toolbar and debug = true and database sqlite
+      - Staging.py : Manage the url config database and mysql-python
+      - Requirements folder install all the dependencies base.txt, staging.txt,dev.txt

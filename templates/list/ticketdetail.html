@@ -24,8 +24,10 @@
               {% disqus_show_comments %}
         </div>
                 <div class="col-md-3">
+                    {% if request.user.is_authenticated %}
                          <p><button class="btn btn-default" onclick="location.href={% url 'edit' post.id %}">Edit</button></p>
                          <p><button class="btn btn-default" onclick="location.href={% url 'delete' post.id %}">Delete</button></p>
+                    {% endif %}
 
                 </div>
                  <div class="col-md-3">

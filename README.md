@@ -30,17 +30,23 @@ I used the chart to show the payment feature amd the most payment and the  most 
 Unicorn uses the Model with Database, View,  Template with html file  Url links
 
 - Bootstrap
+     - Grid: The structure with rows and columns
+     - Navbar: Navigation with links
+     - Table: The ticket list with bugs and features
  
 - Data : 
      - SQL Feature_payment
      - SQL Vote
 - Javascript libraries: D3.js. Crossfilter.js, DC.js
+     - PieChart Barchart 
 
 - Payment
      - Paypal System
 
 # Testing
 ## Testing Browser
+ - The Testing Browser tests  the website on the different browser and
+    checks the different like the picture size  and responsive navbar and charts 
  - Google Crome:
      - All the pages respond very well and jquery library work very well. 
        The Navigation Bar works perfect.The Charts work well  
@@ -60,8 +66,11 @@ Unicorn uses the Model with Database, View,  Template with html file  Url links
       - All  the pages and navbar work well  
         The charts work well. 
         Final Testing is good
- ## Testing Devices
+ ## Testing Devices Responsive
  ### Tech Used : Blisk 
+   - This Testing responsive is used to test the website with
+      the different devices and study the navbar reactive and the 
+      table list ticket and their charts responsive.
    - Phones : 
                All the pages work well and navbar works perfect                 
                The Testing is Good.
@@ -84,6 +93,8 @@ Unicorn uses the Model with Database, View,  Template with html file  Url links
                           
  ## Testing Speed Pages               
  ### PageSpeed Tools
+   - This Testing tests the speed pages and optimization betweeen the Desktop
+      and Mobile checking almost the pages.
    - Home 
        - Desktop   
            Speed: Unavailable;
@@ -128,6 +139,16 @@ Unicorn uses the Model with Database, View,  Template with html file  Url links
            Optimization: Good 79/100     
 ### Deployment
   - GitHub
+      - Initial Commit : Basic codec and template with ticket bug and payment
+          feature .
+      - Updated database: Load the database sql lite
+      - Remove settings: remove settings.py
+      - Removed Bootstrap files: remove some files that created the problem
+          with deployment
+      - some changes: Small changes the database.
+      - changes commit: These changes manage the navbar and the security first the 
+          registration and log in or log out.
+      - final commit: The code with the last changes     
   - Heroku
       - base.py : Replace the settings.py 
       - Dev.py : Manage the debug_toolbar and debug = true and database sqlite
